@@ -1,0 +1,41 @@
+digraph G {
+    graph [rankdir=TB, clusterrank="local"];
+    subgraph cluster_G {
+
+        graph [style="filled,rounded",fillcolor="#80808018", label=""];
+        tfstate [label="tfstate", style="filled", fillcolor="#ffffffb2", fontcolor="#000000", group="0"];
+        subgraph cluster_tfstate {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="tfstate"];
+            tfstate__LookupModule [label="LookupModule\n(tfstate.py:20)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_tfstate {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="tfstate"];
+            tfstate__enumerate_assets [label="enumerate_assets\n(tfstate.py:118)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_tfstate {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="tfstate"];
+            tfstate__enumerate_attributes [label="enumerate_attributes\n(tfstate.py:141)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_tfstate {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="tfstate"];
+            tfstate__enumerate_module_paths [label="enumerate_module_paths\n(tfstate.py:128)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_tfstate {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="tfstate"];
+            tfstate__parse_enumerations [label="parse_enumerations\n(tfstate.py:174)", style="filled", fillcolor="#feccccb2", fontcolor="#000000", group="0"];
+        }
+        subgraph cluster_tfstate__LookupModule {
+
+            graph [style="filled,rounded",fillcolor="#80808018", label="tfstate.LookupModule"];
+            tfstate__LookupModule__run [label="run\n(tfstate.py:25)", style="filled", fillcolor="#ff9999b2", fontcolor="#000000", group="0"];
+        }
+    }
+        tfstate__LookupModule__run -> tfstate__enumerate_assets [style="solid", color="#000000"];
+        tfstate__LookupModule__run -> tfstate__enumerate_module_paths [style="solid", color="#000000"];
+        tfstate__LookupModule__run -> tfstate__enumerate_attributes [style="solid", color="#000000"];
+    }
